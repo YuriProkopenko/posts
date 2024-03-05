@@ -1,0 +1,31 @@
+/* Modal */
+
+.wrapper {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+}
+
+.wrapper.open {
+  display: grid;
+}
+
+.content {
+  position: relative;
+  padding: 35px;
+  background-color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: -35px;
+  right: 10px;
+  color: #fff;
+  background: transparent;
+}

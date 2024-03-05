@@ -20,13 +20,6 @@
   padding: 15px 0px;
 }
 
-.create-form {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 0px;
-}
-
 .posts {
-  padding: 15px 15px;
+  padding: 55px 15px;
 }

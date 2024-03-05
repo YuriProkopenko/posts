@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Modal from "./UI/Modal";
 import Button from "./UI/Button";
 import PostsForm from "./components/PostsForm";
 import PostList from "./components/PostList";
@@ -8,9 +9,11 @@ import styles from "./App.module.css";
 
 const App = () => {
   const [posts, setPosts] = useState(postsData);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCreatePost = (post) => {
     setPosts([...posts, post]);
+    setIsModalOpen(false);
   };
   const handleDeletePost = (postId) => {
     setPosts(posts.filter((p) => p.id != postId));
@@ -18,12 +21,12 @@ const App = () => {
 
   return (
     <div className={styles["wrapper"]}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <PostsForm onCreatePost={handleCreatePost} />
+      </Modal>
       <div className={styles["content"]}>
         <div className={styles["create-btn"]}>
-          <Button disabled>Create post</Button>
-        </div>
-        <div className={styles["create-form"]}>
-          <PostsForm onCreatePost={handleCreatePost} />
+          <Button onClick={() => setIsModalOpen(true)}>Create post</Button>
         </div>
         <section className={styles["posts"]}>
           <PostList posts={posts} onDeletePost={handleDeletePost} />
