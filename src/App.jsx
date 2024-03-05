@@ -11,7 +11,9 @@ const App = () => {
 
   const handleCreatePost = (post) => {
     setPosts([...posts, post]);
-    console.log(posts);
+  };
+  const handleDeletePost = (postId) => {
+    setPosts(posts.filter((p) => p.id != postId));
   };
 
   return (
@@ -24,7 +26,7 @@ const App = () => {
           <PostsForm onCreatePost={handleCreatePost} />
         </div>
         <section className={styles["posts"]}>
-          <PostList posts={posts} />
+          <PostList posts={posts} onDeletePost={handleDeletePost} />
         </section>
       </div>
     </div>
