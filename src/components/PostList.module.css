@@ -1,0 +1,7 @@
+/* Post list */
+
+.wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 15px;
+}
