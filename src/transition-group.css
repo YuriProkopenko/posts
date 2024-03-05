@@ -1,0 +1,20 @@
+/* Transition group */
+
+.post-enter {
+  opacity: 0;
+  transform: translateX(-300px);
+}
+.post-enter-active {
+  opacity: 1;
+  transition: all 400ms ease-in-out;
+  transform: translateX(0px);
+}
+.post-exit {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.post-exit-active {
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  transform: translateX(-300px);
+}
