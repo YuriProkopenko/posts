@@ -1,0 +1,14 @@
+/* Posts form */
+
+.wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+  row-gap: 15px;
+}
+
+.confirm-btn {
+  display: grid;
+  justify-content: end;
+}

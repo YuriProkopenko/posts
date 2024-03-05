@@ -12,3 +12,17 @@
   grid-column: 2 / 3;
   padding: 55px 0px;
 }
+
+.create-btn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
+}
+
+.create-form {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
+}
