@@ -1,8 +1,13 @@
 import styles from "./TextInput.module.css";
 
-const TextInput = ({ placeholder, ...props }) => {
+const TextInput = ({ placeholder, value, onChange }) => {
   return (
-    <input className={styles["wrapper"]} placeholder={placeholder}></input>
+    <input
+      className={styles["wrapper"]}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+    ></input>
   );
 };
 

@@ -1,11 +1,13 @@
 import styles from "./TextArea.module.css";
 
-const TextArea = ({ placeholder }) => {
+const TextArea = ({ placeholder, value, onChange }) => {
   return (
     <textarea
       className={styles["wrapper"]}
       placeholder={placeholder}
-    ></textarea>
+      value={value}
+      onChange={onChange}
+    />
   );
 };
 

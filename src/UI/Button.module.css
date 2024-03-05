@@ -16,3 +16,11 @@
   color: blueviolet;
   background: transparent;
 }
+
+.disabled,
+.disabled:hover {
+  cursor: default;
+  color: #fff;
+  background: grey;
+  border: 2px solid grey;
+}
