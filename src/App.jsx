@@ -1,7 +1,11 @@
 import styles from "./App.module.css";
 
-App = () => {
-  return <div></div>;
+const App = () => {
+  return (
+    <div className={styles["wrapper"]}>
+      <div className={styles["content"]}></div>
+    </div>
+  );
 };
 
 export default App;
