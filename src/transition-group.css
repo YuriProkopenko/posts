@@ -18,3 +18,18 @@
   transition: all 400ms ease-in-out;
   transform: translateX(-300px);
 }
+
+.postsTitle-enter {
+  opacity: 0;
+}
+.postsTitle-enter-active {
+  opacity: 1;
+  transition: all 400ms ease-in-out;
+}
+.postsTitle-exit {
+  opacity: 1;
+}
+.postsTitle-exit-active {
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+}
