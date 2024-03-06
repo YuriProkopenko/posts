@@ -8,7 +8,7 @@ const useFilter = (items, sortQuery, orderQuery, searchQuery) => {
     if (orderQuery) filteringItems.reverse();
     if (searchQuery)
       filteringItems = filteringItems.filter((i) =>
-        i.name.toLowerCase().includes(searchQuery.toLowerCase())
+        i.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
 
     return filteringItems;

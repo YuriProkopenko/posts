@@ -2,7 +2,7 @@ import { RxCross1 } from "react-icons/rx";
 
 import styles from "./PostItem.module.css";
 
-const PostItem = ({ id, name, description, onDeletePost }) => {
+const PostItem = ({ id, title, body, onDeletePost }) => {
   return (
     <li className={styles["wrapper"]}>
       <button
@@ -13,8 +13,8 @@ const PostItem = ({ id, name, description, onDeletePost }) => {
       >
         <RxCross1 size="20px" />
       </button>
-      <p>{name}</p>
-      <p>{description}</p>
+      <p className={styles["title"]}>{title}</p>
+      <p>{body}</p>
     </li>
   );
 };

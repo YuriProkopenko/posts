@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PostService from "./API/PostService";
 import Modal from "./UI/Modal";
 import Button from "./UI/Button";
 import PostsForm from "./components/PostsForm";
 import PostList from "./components/PostList";
-import postsData from "../src/posts-data";
 
 import styles from "./App.module.css";
 
 const App = () => {
-  const [posts, setPosts] = useState(postsData);
+  const [posts, setPosts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  const getPosts = async () => {
+    try {
+      const posts = await PostService.getAll();
+      setPosts(posts);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleCreatePost = (post) => {
     setPosts([...posts, post]);
