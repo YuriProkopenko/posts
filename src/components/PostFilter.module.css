@@ -1,0 +1,39 @@
+/* Post filter */
+
+.wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+@media (width < 600px) {
+  .wrapper {
+    grid-auto-flow: row;
+    row-gap: 15px;
+  }
+}
+
+.sorting {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  max-width: fit-content;
+  column-gap: 15px;
+}
+
+@media (width < 600px) {
+  .sorting {
+    order: 2;
+  }
+}
+
+.order-btn {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: blueviolet;
+}
