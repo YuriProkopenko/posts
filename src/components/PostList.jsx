@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import useFilter from "../hooks/useFilter";
 import PostItem from "./PostItem";
 import PostFilter from "./PostFilter";
 
@@ -12,17 +13,12 @@ const PostList = ({ posts, onDeletePost }) => {
     search: "",
   });
 
-  const filteredPosts = useMemo(() => {
-    let newPosts = posts;
-    newPosts = posts.sort((a, b) =>
-      a[filter.sort].localeCompare(b[filter.sort])
-    );
-    if (filter.orderToUp === false) newPosts.reverse();
-    newPosts = newPosts.filter((p) =>
-      p.name.toLowerCase().includes(filter.search.toLowerCase())
-    );
-    return newPosts;
-  }, [posts, filter]);
+  const filteredPosts = useFilter(
+    posts,
+    filter.sort,
+    filter.orderToUp,
+    filter.search
+  );
 
   return (
     <div className={styles["wrapper"]}>
