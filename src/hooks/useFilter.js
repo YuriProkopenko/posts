@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-const useFilter = (items, sortQuery, orderQuery, searchQuery) => {
+export const useFilter = (items, sortQuery, orderQuery, searchQuery) => {
   const filteredItems = useMemo(() => {
     let filteringItems = items;
     if (sortQuery)
@@ -16,5 +16,3 @@ const useFilter = (items, sortQuery, orderQuery, searchQuery) => {
 
   return filteredItems;
 };
-
-export default useFilter;

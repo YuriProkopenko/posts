@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import useFilter from "../hooks/useFilter";
+import { useFilter } from "../hooks/useFilter";
 import Loader from "../UI/Loader";
 import PostItem from "./PostItem";
 import PostFilter from "./PostFilter";
@@ -37,13 +37,6 @@ const PostList = ({ posts, onDeletePost, isLoading }) => {
           {filteredPosts.length} {filteredPosts.length === 1 ? "post" : "posts"}
         </p>
       )}
-      {/* {!filteredPosts.length ? (
-        <p className={styles["title"]}>No more posts left</p>
-      ) : (
-        <p className={styles["title"]}>
-          {filteredPosts.length} {filteredPosts.length === 1 ? "post" : "posts"}
-        </p>
-      )} */}
       <ul className={styles["list"]}>
         <TransitionGroup component={null}>
           {filteredPosts.map((p, index) => (

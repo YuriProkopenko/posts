@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useFetching } from "./hooks/useFetching";
 import PostService from "./API/PostService";
 import Modal from "./UI/Modal";
 import Button from "./UI/Button";
@@ -10,22 +11,13 @@ import styles from "./App.module.css";
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
+  const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
+    const posts = await PostService.getAll();
+    setPosts(posts);
+  });
   useEffect(() => {
-    getPosts();
+    fetchPosts();
   }, []);
-
-  const getPosts = async () => {
-    try {
-      setIsLoading(true);
-      const posts = await PostService.getAll();
-      setPosts(posts);
-      setIsLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const handleCreatePost = (post) => {
     setPosts([...posts, post]);
@@ -48,7 +40,7 @@ const App = () => {
           <PostList
             posts={posts}
             onDeletePost={handleDeletePost}
-            isLoading={isLoading}
+            isLoading={isPostsLoading}
           />
         </section>
       </div>
