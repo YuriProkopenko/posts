@@ -7,7 +7,7 @@ import PostFilter from "./PostFilter";
 
 import styles from "./PostList.module.css";
 
-const PostList = ({ posts, onDeletePost, isLoading }) => {
+const PostList = ({ posts, onDeletePost, isLoading, error }) => {
   const [filter, setFilter] = useState({
     sort: "title",
     orderToUp: true,
@@ -24,15 +24,20 @@ const PostList = ({ posts, onDeletePost, isLoading }) => {
   return (
     <div className={styles["wrapper"]}>
       <PostFilter filter={filter} setFilter={setFilter} />
-      {isLoading && (
+      {error && (
+        <div className={styles["title"]}>
+          <p>{error}</p>
+        </div>
+      )}
+      {!error && isLoading && (
         <div className={styles["title"]}>
           <Loader />
         </div>
       )}
-      {!isLoading && !filteredPosts.length && (
+      {!error && !isLoading && !filteredPosts.length && (
         <p className={styles["title"]}>No more posts left</p>
       )}
-      {!isLoading && filteredPosts.length && (
+      {!error && !isLoading && filteredPosts.length && (
         <p className={styles["title"]}>
           {filteredPosts.length} {filteredPosts.length === 1 ? "post" : "posts"}
         </p>

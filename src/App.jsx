@@ -41,6 +41,7 @@ const App = () => {
             posts={posts}
             onDeletePost={handleDeletePost}
             isLoading={isPostsLoading}
+            error={postError}
           />
         </section>
       </div>
