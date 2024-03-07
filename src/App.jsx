@@ -10,6 +10,7 @@ import styles from "./App.module.css";
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getPosts();
@@ -17,8 +18,10 @@ const App = () => {
 
   const getPosts = async () => {
     try {
+      setIsLoading(true);
       const posts = await PostService.getAll();
       setPosts(posts);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -42,7 +45,11 @@ const App = () => {
           <Button onClick={() => setIsModalOpen(true)}>Create post</Button>
         </div>
         <section className={styles["posts"]}>
-          <PostList posts={posts} onDeletePost={handleDeletePost} />
+          <PostList
+            posts={posts}
+            onDeletePost={handleDeletePost}
+            isLoading={isLoading}
+          />
         </section>
       </div>
     </div>

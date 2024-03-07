@@ -1,0 +1,18 @@
+/* Loader */
+
+.wrapper {
+  width: 55px;
+  height: 55px;
+  border: 3px dashed blueviolet;
+  border-radius: 50%;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
