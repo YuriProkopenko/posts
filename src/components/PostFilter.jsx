@@ -11,6 +11,7 @@ const PostFilter = ({ filter, setFilter }) => {
       <div className={styles["sorting"]}>
         <Select
           options={[
+            { value: "id", name: "Number" },
             { value: "title", name: "Name" },
             { value: "body", name: "Description" },
           ]}

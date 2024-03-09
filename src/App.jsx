@@ -32,7 +32,7 @@ const App = () => {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <PostsForm onCreatePost={handleCreatePost} />
       </Modal>
-      <div className={styles["content"]}>
+      <section className={styles["content"]}>
         <div className={styles["create-btn"]}>
           <Button onClick={() => setIsModalOpen(true)}>Create post</Button>
         </div>
@@ -44,7 +44,7 @@ const App = () => {
             error={postError}
           />
         </section>
-      </div>
+      </section>
     </div>
   );
 };

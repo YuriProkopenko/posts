@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { useFilter } from "../hooks/useFilter";
 import Loader from "../UI/Loader";
@@ -9,7 +9,7 @@ import styles from "./PostList.module.css";
 
 const PostList = ({ posts, onDeletePost, isLoading, error }) => {
   const [filter, setFilter] = useState({
-    sort: "title",
+    sort: "id",
     orderToUp: true,
     search: "",
   });
@@ -46,12 +46,7 @@ const PostList = ({ posts, onDeletePost, isLoading, error }) => {
         <TransitionGroup component={null}>
           {filteredPosts.map((p, index) => (
             <CSSTransition key={p.id} timeout={400} classNames="post">
-              <PostItem
-                id={p.id}
-                title={`${index + 1}. ${p.title}`}
-                body={p.body}
-                onDeletePost={onDeletePost}
-              />
+              <PostItem id={p.id} post={p} onDeletePost={onDeletePost} />
             </CSSTransition>
           ))}
         </TransitionGroup>
