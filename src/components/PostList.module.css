@@ -21,3 +21,11 @@
   font-weight: 400;
   color: blueviolet;
 }
+
+.pagination {
+  display: block;
+}
+
+.disabled {
+  display: none;
+}
