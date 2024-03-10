@@ -1,50 +1,20 @@
-import { useState, useEffect } from "react";
-import { useFetching } from "./hooks/useFetching";
-import PostService from "./API/PostService";
-import Modal from "./UI/Modal";
-import Button from "./UI/Button";
-import PostsForm from "./components/PostsForm";
-import PostList from "./components/PostList";
+import Posts from "./pages/Posts";
+import About from "./pages/About";
 
 import styles from "./App.module.css";
 
 const App = () => {
-  const [posts, setPosts] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
-    const posts = await PostService.getAll();
-    setPosts(posts);
-  });
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  const handleCreatePost = (post) => {
-    setPosts([...posts, post]);
-    setIsModalOpen(false);
-  };
-  const handleDeletePost = (postId) => {
-    setPosts(posts.filter((p) => p.id != postId));
-  };
-
   return (
     <div className={styles["wrapper"]}>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <PostsForm onCreatePost={handleCreatePost} />
-      </Modal>
-      <section className={styles["content"]}>
-        <div className={styles["create-btn"]}>
-          <Button onClick={() => setIsModalOpen(true)}>Create post</Button>
-        </div>
-        <section className={styles["posts"]}>
-          <PostList
-            posts={posts}
-            onDeletePost={handleDeletePost}
-            isLoading={isPostsLoading}
-            error={postError}
-          />
+      <header className={styles["header"]}></header>
+      <main className={styles["main"]}>
+        <section className={styles["aside-left"]}></section>
+        <section className={styles["content"]}>
+          <About />
         </section>
-      </section>
+        <section className={styles["aside-right"]}></section>
+      </main>
+      <footer className={styles["footer"]}></footer>
     </div>
   );
 };

@@ -1,0 +1,19 @@
+/* Posts */
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+  max-width: 600px;
+  padding: 35px 0px;
+}
+
+.create-btn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
+}
+
+.post-list {
+  padding: 35px 0px;
+}

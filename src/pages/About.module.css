@@ -1,0 +1,19 @@
+/* About */
+
+.wrapper {
+  display: grid;
+  align-items: start;
+  justify-content: center;
+}
+
+.content {
+  padding: 35px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: blueviolet;
+}
+
+.content h1 {
+  font-size: 32px;
+}
