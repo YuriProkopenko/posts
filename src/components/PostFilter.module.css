@@ -2,12 +2,19 @@
 
 .wrapper {
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
+  row-gap: 15px;
   align-items: center;
 }
 
-@media (width < 600px) {
-  .wrapper {
+.arranging {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+@media (width < 500px) {
+  .arranging {
     grid-auto-flow: row;
     row-gap: 15px;
   }
@@ -16,15 +23,7 @@
 .sorting {
   display: grid;
   grid-auto-flow: column;
-  justify-content: start;
-  max-width: fit-content;
   column-gap: 15px;
-}
-
-@media (width < 600px) {
-  .sorting {
-    order: 2;
-  }
 }
 
 .order-btn {
@@ -34,6 +33,40 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: #fff;
+  background-color: blueviolet;
+}
+
+.limits {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 15px;
+  justify-content: start;
+}
+
+.limit-btn,
+.limit-active-btn {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: blueviolet;
+  background: transparent;
+  border: 2px solid blueviolet;
+}
+
+.limit-active-btn {
+  cursor: default;
+  color: #fff;
+  background-color: blueviolet;
+}
+
+.limit-btn:hover {
   color: #fff;
   background-color: blueviolet;
 }

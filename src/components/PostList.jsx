@@ -13,6 +13,11 @@ const PostList = ({ posts, onDeletePost, isLoading, error }) => {
     sort: "id",
     orderToUp: true,
     search: "",
+    limits: [
+      { value: 5, isActive: false },
+      { value: 10, isActive: true },
+      { value: 15, isActive: false },
+    ],
   });
 
   const filteredPosts = useFilter(
@@ -25,6 +30,16 @@ const PostList = ({ posts, onDeletePost, isLoading, error }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const [postsLimit, setPostsLimit] = useState(10);
+
+  const handleChangeLimit = (newLimit) => {
+    const limits = filter.limits.map((limit) =>
+      limit.value !== newLimit
+        ? { ...limit, isActive: false }
+        : { ...limit, isActive: true }
+    );
+    setFilter({ ...filter, limits });
+    setPostsLimit(newLimit);
+  };
 
   const handleChangePage = (newPage) => {
     setCurrentPage(newPage);
@@ -48,7 +63,11 @@ const PostList = ({ posts, onDeletePost, isLoading, error }) => {
 
   return (
     <div className={styles["wrapper"]}>
-      <PostFilter filter={filter} setFilter={setFilter} />
+      <PostFilter
+        filter={filter}
+        setFilter={setFilter}
+        onChangeLimit={handleChangeLimit}
+      />
       {error && (
         <div className={styles["title"]}>
           <p>{error}</p>
