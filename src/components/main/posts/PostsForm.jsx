@@ -1,6 +1,6 @@
-import TextInput from "../UI/TextInput";
-import TextArea from "../UI/TextArea";
-import Button from "../UI/Button";
+import TextInput from "../../../UI/TextInput";
+import TextArea from "../../../UI/TextArea";
+import Button from "../../../UI/Button";
 
 import styles from "./PostsForm.module.css";
 import { useState } from "react";

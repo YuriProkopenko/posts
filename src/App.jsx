@@ -1,16 +1,16 @@
-import Posts from "./pages/Posts";
-import About from "./pages/About";
+import AppRouter from "./routing/AppRouter";
+import Header from "./components/header/Header";
 
 import styles from "./App.module.css";
 
 const App = () => {
   return (
     <div className={styles["wrapper"]}>
-      <header className={styles["header"]}></header>
+      <Header />
       <main className={styles["main"]}>
         <section className={styles["aside-left"]}></section>
         <section className={styles["content"]}>
-          <About />
+          <AppRouter />
         </section>
         <section className={styles["aside-right"]}></section>
       </main>

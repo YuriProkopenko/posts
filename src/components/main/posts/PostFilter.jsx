@@ -1,7 +1,7 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-import Select from "./Select";
-import SearchInput from "./SearchInput";
+import Select from "../search/Select";
+import SearchInput from "../search/SearchInput";
 
 import styles from "./PostFilter.module.css";
 

@@ -1,0 +1,27 @@
+/* Header */
+
+.wrapper {
+  display: grid;
+  grid-template: 1fr / 1fr minmax(auto, 900px) 1fr;
+  background-color: blueviolet;
+}
+
+.menu {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-auto-flow: column;
+  column-gap: 35px;
+  align-items: center;
+  justify-content: end;
+}
+
+.link {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

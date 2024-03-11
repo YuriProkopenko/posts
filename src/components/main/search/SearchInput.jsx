@@ -1,5 +1,5 @@
 import { RiSearchLine } from "react-icons/ri";
-import TextInput from "../UI/TextInput";
+import TextInput from "../../../UI/TextInput";
 
 import styles from "./SearchInput.module.css";
 

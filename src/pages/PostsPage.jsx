@@ -3,10 +3,10 @@ import { useFetching } from "../hooks/useFetching";
 import PostService from "../API/PostService";
 import Modal from "../UI/Modal";
 import Button from "../UI/Button";
-import PostsForm from "../components/PostsForm";
-import PostList from "../components/PostList";
+import PostsForm from "../components/main/posts/PostsForm";
+import PostList from "../components/main/posts/PostList";
 
-import styles from "./Posts.module.css";
+import styles from "./PostsPage.module.css";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { useFilter } from "../hooks/useFilter";
-import Loader from "../UI/Loader";
+import { useFilter } from "../../../hooks/useFilter";
+import Loader from "../../../UI/Loader";
 import PostItem from "./PostItem";
 import PostFilter from "./PostFilter";
-import Pagination from "../UI/Pagination";
+import Pagination from "../../../UI/Pagination";
 
 import styles from "./PostList.module.css";
 
