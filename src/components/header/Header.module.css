@@ -15,13 +15,23 @@
   justify-content: end;
 }
 
-.link {
+.link,
+.link-active {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #fff;
 }
 
+.link-active {
+  cursor: default;
+  color: rgb(188, 180, 193);
+}
+
 .link:hover {
   text-decoration: underline;
+}
+
+.link:active {
+  color: rgb(188, 180, 193);
 }
