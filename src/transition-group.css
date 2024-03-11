@@ -2,7 +2,7 @@
 
 .post-enter {
   opacity: 0;
-  transform: translateX(-300px);
+  transform: translateX(-500px);
 }
 .post-enter-active {
   opacity: 1;
@@ -16,7 +16,7 @@
 .post-exit-active {
   opacity: 0;
   transition: all 400ms ease-in-out;
-  transform: translateX(-300px);
+  transform: translateX(-500px);
 }
 
 .postsTitle-enter {

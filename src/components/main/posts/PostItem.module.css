@@ -15,13 +15,21 @@
 }
 
 .title {
-  padding: 0px 20px 15px 0px;
+  padding: 0px 55px 15px 0px;
 }
 
 .close-btn {
   position: absolute;
   right: 12px;
   top: 12px;
+  color: #fff;
+  background: transparent;
+}
+
+.enter-btn {
+  position: absolute;
+  right: 45px;
+  top: 10px;
   color: #fff;
   background: transparent;
 }

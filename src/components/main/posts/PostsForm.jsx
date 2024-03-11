@@ -6,22 +6,22 @@ import styles from "./PostsForm.module.css";
 import { useState } from "react";
 
 const PostsForm = ({ onCreatePost }) => {
-  const [post, setPost] = useState({ name: "", description: "" });
+  const [post, setPost] = useState({ title: "", description: "" });
 
   const handleNewPost = (e) => {
     e.preventDefault();
-    const newPost = { id: Date.now(), ...post };
+    const newPost = { ...post, id: Date.now() };
     onCreatePost(newPost);
-    setPost((post) => (post = { name: "", description: "" }));
+    setPost((post) => (post = { title: "", description: "" }));
   };
 
   return (
     <div className={styles["wrapper"]}>
       <TextInput
         placeholder="name..."
-        value={post.name}
+        value={post.title}
         onChange={(e) =>
-          setPost((post) => (post = { ...post, name: e.target.value }))
+          setPost((post) => (post = { ...post, title: e.target.value }))
         }
       />
       <TextArea

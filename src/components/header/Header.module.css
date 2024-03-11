@@ -3,6 +3,7 @@
 .wrapper {
   display: grid;
   grid-template: 1fr / 1fr minmax(auto, 900px) 1fr;
+  padding: 0px 15px;
   background-color: blueviolet;
 }
 

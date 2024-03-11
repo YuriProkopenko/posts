@@ -4,6 +4,7 @@
   display: grid;
   align-items: start;
   justify-content: center;
+  padding: 35px 15px;
 }
 
 .content {
