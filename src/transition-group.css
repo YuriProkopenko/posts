@@ -1,13 +1,13 @@
 /* Transition group */
 
 .post-enter {
-  opacity: 0;
-  transform: translateX(-500px);
+  /* opacity: 0;
+  transform: translateX(-500px); */
 }
 .post-enter-active {
-  opacity: 1;
+  /* opacity: 1;
   transition: all 400ms ease-in-out;
-  transform: translateX(0px);
+  transform: translateX(0px); */
 }
 .post-exit {
   opacity: 1;

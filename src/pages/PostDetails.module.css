@@ -1,0 +1,52 @@
+/* Post details */
+
+.wrapper {
+  padding: 15px;
+  max-width: 600px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.header {
+  height: 75px;
+  padding-top: 10px;
+}
+
+.back-btn {
+  transform: rotate(180deg);
+  color: blueviolet;
+  background: transparent;
+}
+
+.post {
+  padding: 15px;
+  color: #fff;
+  background-color: blueviolet;
+}
+
+.title {
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+.body {
+}
+
+.comments {
+  margin: 35px 0px 55px 0px;
+}
+
+.comments li {
+  padding: 15px;
+  color: blueviolet;
+  background: transparent;
+  border-bottom: 1px solid blueviolet;
+}
+
+.comments li:last-child {
+  border-bottom: none;
+}
+
+.comments li p {
+  margin: 15px 0px;
+}

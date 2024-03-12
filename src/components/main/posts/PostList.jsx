@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { useFilter } from "../../../hooks/useFilter";
 import Loader from "../../../UI/Loader";
