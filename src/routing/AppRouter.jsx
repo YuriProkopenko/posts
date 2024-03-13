@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import AboutPage from "../pages/AboutPage";
 import PostsPage from "../pages/PostsPage";
@@ -9,7 +9,7 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<AboutPage />} />
+        <Route index element={<Navigate to="/about" replace />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="posts" element={<PostsPage />} />
         <Route path="posts/:id" element={<PostDetails />} />

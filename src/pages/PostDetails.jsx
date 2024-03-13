@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useFetching } from "../hooks/useFetching";
 import PostService from "../API/PostService";
 import { IoArrowUndoOutline } from "react-icons/io5";
@@ -25,12 +25,14 @@ const PostDetails = ({ onClick }) => {
     fetchPosts();
   }, []);
 
+  const navigate = useNavigate();
+
   console.log(post);
 
   return (
     <section className={styles["wrapper"]}>
       <div className={styles["header"]}>
-        <button className={styles["back-btn"]} onClick={onClick}>
+        <button className={styles["back-btn"]} onClick={() => navigate(-1)}>
           <IoLogOutOutline size="25px" />
         </button>
       </div>
