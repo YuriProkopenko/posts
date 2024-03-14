@@ -1,0 +1,20 @@
+/* Separator */
+
+.separator {
+  display: grid;
+  grid-template: 1fr / 1fr 50% 1fr;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: blueviolet;
+}
+
+.separator:before,
+.separator:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: blueviolet;
+}

@@ -1,0 +1,23 @@
+/* Valid message */
+
+.wrapper {
+  position: absolute;
+  padding: 10px 15px;
+  top: 100%;
+  left: 15px;
+  text-align: center;
+  background-color: blueviolet;
+  color: #fff;
+  border-radius: 4px;
+  z-index: 100;
+  transition: all 0.1s;
+}
+
+.wrapper:before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 35px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid blueviolet;
+}

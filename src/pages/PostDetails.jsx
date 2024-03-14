@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useFetching } from "../hooks/useFetching";
 import PostService from "../API/PostService";
-import { IoArrowUndoOutline } from "react-icons/io5";
 import { IoLogOutOutline } from "react-icons/io5";
 import Loader from "../UI/Loader";
 

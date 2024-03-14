@@ -1,9 +1,9 @@
+import { useState } from "react";
 import TextInput from "../../../UI/TextInput";
 import TextArea from "../../../UI/TextArea";
 import Button from "../../../UI/Button";
 
 import styles from "./PostsForm.module.css";
-import { useState } from "react";
 
 const PostsForm = ({ onCreatePost }) => {
   const [post, setPost] = useState({ title: "", description: "" });

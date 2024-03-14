@@ -4,7 +4,7 @@ import { IoEnterOutline } from "react-icons/io5";
 
 import styles from "./PostItem.module.css";
 
-const PostItem = ({ id, post, onDeletePost, onEnterPost }) => {
+const PostItem = ({ id, post, onDeletePost }) => {
   return (
     <li className={styles["wrapper"]}>
       <Link className={styles["enter-btn"]} to={`/posts/${id}`}>

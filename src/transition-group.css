@@ -33,3 +33,16 @@
   opacity: 0;
   transition: all 400ms ease-in-out;
 }
+
+.valid-message-enter {
+  opacity: 0;
+}
+.valid-message-enter-active {
+  opacity: 1;
+}
+.valid-message-exit {
+  opacity: 1;
+}
+.valid-message-exit-active {
+  opacity: 0;
+}

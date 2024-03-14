@@ -21,6 +21,14 @@ const Header = () => {
         >
           Posts
         </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? styles["link-active"] : styles["link"]
+          }
+          to="/login"
+        >
+          Login
+        </NavLink>
       </div>
     </header>
   );
