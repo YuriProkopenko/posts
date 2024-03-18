@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import TextInput from "../../../UI/TextInput";
 import Button from "../../../UI/Button";
 import Separator from "../../../UI/Separator";
 import ValidMessage from "./ValidMessage";
+import user from "../../../user-data";
 
 import styles from "./Register.module.css";
 
@@ -51,6 +52,10 @@ const Register = () => {
     errorMessage: "please confirm your password correct!",
   });
 
+  const [isRegistered, setIsRegistered] = useState(false);
+
+  console.log(user);
+
   const handleRegister = (e) => {
     e.preventDefault();
     setEmailValidation(getEmailValidation(registerInputs.email));
@@ -71,9 +76,17 @@ const Register = () => {
       !passwordValidation.errorMessage &&
       confirmPassValidation.valid &&
       !confirmPassValidation.errorMessage
-    )
-      console.log("ok");
+    ) {
+      user.email = registerInputs.email;
+      user.password = registerInputs.password;
+      console.log(user);
+      setIsRegistered(true);
+    }
   }, [emailValidation, passwordValidation, confirmPassValidation]);
+
+  if (isRegistered) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className={styles["wrapper"]}>

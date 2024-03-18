@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useAuth } from "../../../hooks/useAuth";
+import user from "../../../user-data";
 import TextInput from "../../../UI/TextInput";
 import Button from "../../../UI/Button";
 import Separator from "../../../UI/Separator";
@@ -32,6 +34,9 @@ const Login = () => {
     valid: true,
     errorMessage: "password must have 6 or more symbols!",
   });
+  const { logIn } = useAuth();
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -46,8 +51,16 @@ const Login = () => {
       passwordValidation.valid &&
       !passwordValidation.errorMessage
     )
-      console.log("ok");
+      if (
+        user.email === loginInputs.email &&
+        user.password === loginInputs.password
+      ) {
+        logIn({ email: loginInputs.email, password: loginInputs.password });
+        setIsLoggedIn(true);
+      }
   }, [emailValidation, passwordValidation]);
+
+  if (isLoggedIn) return <Navigate to="/" />;
 
   return (
     <div className={styles["wrapper"]}>
