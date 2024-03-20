@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../hooks/useAuth";
 import user from "../../../user-data";
 import TextInput from "../../../UI/TextInput";
@@ -36,7 +36,9 @@ const Login = () => {
   });
   const { logIn } = useAuth();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const fromPage = location.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -55,12 +57,12 @@ const Login = () => {
         user.email === loginInputs.email &&
         user.password === loginInputs.password
       ) {
-        logIn({ email: loginInputs.email, password: loginInputs.password });
-        setIsLoggedIn(true);
+        logIn(
+          { email: loginInputs.email, password: loginInputs.password },
+          () => navigate(fromPage, { replace: true })
+        );
       }
   }, [emailValidation, passwordValidation]);
-
-  if (isLoggedIn) return <Navigate to="/" />;
 
   return (
     <div className={styles["wrapper"]}>
