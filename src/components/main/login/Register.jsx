@@ -54,8 +54,6 @@ const Register = () => {
 
   const [isRegistered, setIsRegistered] = useState(false);
 
-  console.log(user);
-
   const handleRegister = (e) => {
     e.preventDefault();
     setEmailValidation(getEmailValidation(registerInputs.email));
@@ -79,7 +77,6 @@ const Register = () => {
     ) {
       user.email = registerInputs.email;
       user.password = registerInputs.password;
-      console.log(user);
       setIsRegistered(true);
     }
   }, [emailValidation, passwordValidation, confirmPassValidation]);
