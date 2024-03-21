@@ -8,7 +8,6 @@ const Header = () => {
   const handleLogOut = () => {
     logOut();
   };
-  console.log(user);
 
   return (
     <header className={styles["wrapper"]}>

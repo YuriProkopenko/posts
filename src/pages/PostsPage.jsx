@@ -5,6 +5,7 @@ import Modal from "../UI/Modal";
 import Button from "../UI/Button";
 import PostsForm from "../components/main/posts/PostsForm";
 import PostList from "../components/main/posts/PostList";
+import PopupNote from "../UI/PopupNote";
 
 import styles from "./PostsPage.module.css";
 
@@ -18,10 +19,16 @@ const Posts = () => {
   useEffect(() => {
     fetchPosts();
   }, []);
+  const [isPopupActive, setIsPopupActive] = useState(false);
+  if (isPopupActive)
+    setTimeout(() => {
+      setIsPopupActive(false);
+    }, 3000);
 
   const handleCreatePost = (post) => {
     setPosts([...posts, post]);
     setIsModalOpen(false);
+    setIsPopupActive(true);
   };
   const handleDeletePost = (postId) => {
     setPosts(posts.filter((p) => p.id != postId));
@@ -32,6 +39,10 @@ const Posts = () => {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <PostsForm onCreatePost={handleCreatePost} />
       </Modal>
+      <PopupNote
+        isActive={isPopupActive}
+        message="post successfully created!"
+      />
       <div className={styles["create-btn"]}>
         <Button onClick={() => setIsModalOpen(true)}>Create post</Button>
       </div>
